@@ -1,4 +1,4 @@
-# CPU Workload Scheduling with KAI Scheduler
+# Scheduling GPU Workloads with KAI Scheduler
 
 ## Prerequisites
 
