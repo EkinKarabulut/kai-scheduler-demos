@@ -6,12 +6,6 @@
 - 4 nodes with 8 GPUs each (32 total GPUs)
 - NVIDIA device plugin installed and configured
 - Kubeflow training operator installed (required for distributed training)
-- Namespaces created for each project:
-   ```bash
-   kubectl create namespace runai-project-a
-   kubectl create namespace runai-project-c
-   kubectl create namespace runai-project-d
-   ```
 
 ## Queue Configuration
 
