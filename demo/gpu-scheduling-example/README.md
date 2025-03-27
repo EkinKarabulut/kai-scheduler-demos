@@ -60,7 +60,6 @@ kubectl get pods -A -w
 
 Expected Output:
 ```
-
 Allocating 4 GPUs to training-job-1 on node node-1
 Allocating 2 GPUs to training-job-2 on node node-1
 Allocating 6 GPUs to training-job-3 on node node-2
@@ -103,7 +102,7 @@ Creating 4 contiguous GPUs on node-1
 Scheduling training-job-a (4 GPUs) on node-1
 ```
 
-## Scheduling Actions after Job Submission
+## Scheduling Actions after New Workload Submission
 
 1. **Allocation Phase**
    - Training Job B (3 GPUs) is scheduled on Node 3
