@@ -1,4 +1,4 @@
-apiVersion: scheduling.kai.nvidia.com/v1
+apiVersion: scheduling.run.ai/v2
 kind: Queue
 metadata:
   name: department-1
@@ -13,7 +13,7 @@ spec:
       quota: 64
       overQuotaWeight: 2.0
 ---
-apiVersion: scheduling.kai.nvidia.com/v1
+apiVersion: scheduling.run.ai/v2
 kind: Queue
 metadata:
   name: department-2
@@ -28,7 +28,7 @@ spec:
       quota: 64
       overQuotaWeight: 1.0
 ---
-apiVersion: scheduling.kai.nvidia.com/v1
+apiVersion: scheduling.run.ai/v2
 kind: Queue
 metadata:
   name: project-a
@@ -44,7 +44,7 @@ spec:
       quota: 32
       overQuotaWeight: 2.0
 ---
-apiVersion: scheduling.kai.nvidia.com/v1
+apiVersion: scheduling.run.ai/v2
 kind: Queue
 metadata:
   name: project-b
@@ -60,7 +60,7 @@ spec:
       quota: 32
       overQuotaWeight: 1.0
 ---
-apiVersion: scheduling.kai.nvidia.com/v1
+apiVersion: scheduling.run.ai/v2
 kind: Queue
 metadata:
   name: project-c
@@ -76,7 +76,7 @@ spec:
       quota: 32
       overQuotaWeight: 1.5
 ---
-apiVersion: scheduling.kai.nvidia.com/v1
+apiVersion: scheduling.run.ai/v2
 kind: Queue
 metadata:
   name: project-d
