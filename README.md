@@ -9,6 +9,7 @@ This repository contains demonstration examples for the [KAI Scheduler](https://
   - [GPU Scheduling Example](#gpu-scheduling-example)
 - [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
+- [Documentation](#documentation)
 
 ## Repository Structure
 
@@ -61,3 +62,5 @@ Each demo has its own README with detailed instructions. Please refer to:
 - [CPU Scheduling Demo Guide](demo/cpu-scheduling-example/README.md)
 - [GPU Scheduling Demo Guide](demo/gpu-scheduling-example/README.md)
 
+## Documentation 
+For more detailed information about features and how the KAI scheduler works, please refer to the [documentation](https://github.com/NVIDIA/KAI-Scheduler/docs). We welcome any questions in Github issues! 
