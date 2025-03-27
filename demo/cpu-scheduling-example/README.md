@@ -5,12 +5,6 @@
 - Kubernetes cluster with KAI Scheduler installed (version 1.0 or later)
 - 4 nodes with 8 CPUs each (32 total CPUs)
 - Kubeflow training operator installed (required for distributed training)
-- Namespaces created for each project:
-   ```bash
-   kubectl create namespace runai-project-a
-   kubectl create namespace runai-project-c
-   kubectl create namespace runai-project-d
-   ```
 
 ## Queue Configuration
 
