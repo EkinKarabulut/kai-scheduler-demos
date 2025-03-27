@@ -137,4 +137,4 @@ If pods are not being scheduled, check:
 3. `schedulerName` is set to `kai-scheduler`
 4. Resource requests are within queue quotas
 5. Node resources are available
-6. 6. For distributed training make sure that sufficient resources are available on the nodes
+6. For distributed training make sure that sufficient resources are available on the nodes
