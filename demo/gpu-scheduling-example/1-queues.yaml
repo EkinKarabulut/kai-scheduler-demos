@@ -1,0 +1,111 @@
+apiVersion: scheduling.kai.nvidia.com/v1
+kind: Queue
+metadata:
+  name: department-1
+spec:
+  displayName: "Department 1"
+  priority: 200
+  resources:
+    gpu:
+      quota: 16
+      overQuotaWeight: 2.0
+    cpu:
+      quota: 16
+      overQuotaWeight: 2.0
+    memory:
+      quota: 64
+      overQuotaWeight: 2.0
+---
+apiVersion: scheduling.kai.nvidia.com/v1
+kind: Queue
+metadata:
+  name: department-2
+spec:
+  displayName: "Department 2"
+  priority: 100
+  resources:
+    gpu:
+      quota: 16
+      overQuotaWeight: 1.0
+    cpu:
+      quota: 16
+      overQuotaWeight: 1.0
+    memory:
+      quota: 64
+      overQuotaWeight: 1.0
+---
+apiVersion: scheduling.kai.nvidia.com/v1
+kind: Queue
+metadata:
+  name: project-a
+spec:
+  displayName: "Project A"
+  parentQueue: department-1
+  priority: 150
+  resources:
+    gpu:
+      quota: 8
+      overQuotaWeight: 2.0
+    cpu:
+      quota: 8
+      overQuotaWeight: 2.0
+    memory:
+      quota: 32
+      overQuotaWeight: 2.0
+---
+apiVersion: scheduling.kai.nvidia.com/v1
+kind: Queue
+metadata:
+  name: project-b
+spec:
+  displayName: "Project B"
+  parentQueue: department-1
+  priority: 100
+  resources:
+    gpu:
+      quota: 8
+      overQuotaWeight: 1.0
+    cpu:
+      quota: 8
+      overQuotaWeight: 1.0
+    memory:
+      quota: 32
+      overQuotaWeight: 1.0
+---
+apiVersion: scheduling.kai.nvidia.com/v1
+kind: Queue
+metadata:
+  name: project-c
+spec:
+  displayName: "Project C"
+  parentQueue: department-2
+  priority: 150
+  resources:
+    gpu:
+      quota: 8
+      overQuotaWeight: 1.5
+    cpu:
+      quota: 8
+      overQuotaWeight: 1.5
+    memory:
+      quota: 32
+      overQuotaWeight: 1.5
+---
+apiVersion: scheduling.kai.nvidia.com/v1
+kind: Queue
+metadata:
+  name: project-d
+spec:
+  displayName: "Project D"
+  parentQueue: department-2
+  priority: 100
+  resources:
+    gpu:
+      quota: 8
+      overQuotaWeight: 1.0
+    cpu:
+      quota: 8
+      overQuotaWeight: 1.0
+    memory:
+      quota: 32
+      overQuotaWeight: 1.0 

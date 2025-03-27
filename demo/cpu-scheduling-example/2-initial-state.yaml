@@ -1,0 +1,115 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: training-job-1
+  namespace: runai-project-a
+  labels:
+    runai/queue: project-a
+spec:
+  schedulerName: kai-scheduler
+  containers:
+    - name: main
+      image: ubuntu
+      command: ["sleep", "3600"]
+      resources:
+        requests:
+          cpu: "4"
+        limits:
+          cpu: "4"
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: training-job-2
+  namespace: runai-project-c
+  labels:
+    runai/queue: project-c
+spec:
+  schedulerName: kai-scheduler
+  containers:
+    - name: main
+      image: ubuntu
+      command: ["sleep", "3600"]
+      resources:
+        requests:
+          cpu: "2"
+        limits:
+          cpu: "2"
+---
+apiVersion: "kubeflow.org/v1"
+kind: PyTorchJob
+metadata:
+  name: pytorchdistributed-training
+  namespace: runai-project-c
+  labels:
+    runai/queue: project-c
+spec:
+  pytorchReplicaSpecs:
+    Master:
+      replicas: 1
+      restartPolicy: OnFailure
+      template:
+        spec:
+          schedulerName: kai-scheduler
+          containers:
+            - args:
+                - --backend
+                - gloo
+                - --epochs
+                - "900"
+                - --batch-size
+                - "64"
+                - --learning-rate
+                - "0.01"
+              image: pytorch/pytorch:2.1.0-cpu
+              name: pytorch
+              command: ["python"]
+              resources:
+                requests:
+                  cpu: "2"
+                limits:
+                  cpu: "2"
+    Worker:
+      replicas: 2
+      restartPolicy: OnFailure
+      template:
+        spec:
+          schedulerName: kai-scheduler
+          containers:
+            - args:
+                - --backend
+                - gloo
+                - --epochs
+                - "900"
+                - --batch-size
+                - "64"
+                - --learning-rate
+                - "0.01"
+              image: pytorch/pytorch:2.1.0-cpu
+              name: pytorch
+              command: ["python"]
+              resources:
+                requests:
+                  cpu: "2"
+                limits:
+                  cpu: "2"
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: interactive-job
+  namespace: runai-project-d
+  labels:
+    runai/queue: project-d
+spec:
+  schedulerName: kai-scheduler
+  priorityClassName: build  # Non-preemptible interactive job
+  containers:
+    - name: main
+      image: ubuntu
+      command: ["sleep", "3600"]
+      resources:
+        requests:
+          cpu: "5"
+        limits:
+          cpu: "5" 

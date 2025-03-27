@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: training-job-a
+  namespace: project-c
+  labels:
+    runai/queue: project-c
+spec:
+  schedulerName: kai-scheduler
+  containers:
+    - name: main
+      image: ubuntu
+      command: ["sleep", "3600"]
+      resources:
+        requests:
+          cpu: "4"
+        limits:
+          cpu: "4"
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: training-job-b
+  namespace: project-a
+  labels:
+    runai/queue: project-a
+spec:
+  schedulerName: kai-scheduler
+  containers:
+    - name: main
+      image: ubuntu
+      command: ["sleep", "3600"]
+      resources:
+        requests:
+          cpu: "3"
+        limits:
+          cpu: "3" 
