@@ -1,7 +1,5 @@
 # Scheduling GPU Jobs with KAI Scheduler
 
-This demo showcases the KAI Scheduler's GPU resource management capabilities.
-
 ## Prerequisites
 
 - Kubernetes cluster with KAI Scheduler installed (version 1.0 or later)
