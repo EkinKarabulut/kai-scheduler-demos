@@ -1,6 +1,14 @@
 # KAI Scheduler Demos
 
-This repository contains demonstration examples for the KAI Scheduler, showcasing its capabilities in both CPU and GPU resource management. These demos illustrate how the scheduler handles complex scheduling scenarios, including priority-based scheduling, workload consolidation, and gang scheduling.
+This repository contains demonstration examples for the [KAI Scheduler](https://github.com/NVIDIA/KAI-Scheduler), showcasing its capabilities in both CPU and GPU resource management. These demos illustrate how the scheduler handles complex scheduling scenarios, including priority-based scheduling, workload consolidation, and gang scheduling.
+
+## Table of Contents
+- [Repository Structure](#repository-structure)
+- [Demo Contents](#demo-contents)
+  - [CPU Scheduling Example](#cpu-scheduling-example)
+  - [GPU Scheduling Example](#gpu-scheduling-example)
+- [Prerequisites](#prerequisites)
+- [Getting Started](#getting-started)
 
 ## Repository Structure
 
@@ -32,7 +40,6 @@ This repository contains demonstration examples for the KAI Scheduler, showcasin
 ### GPU Scheduling Example
 - Demonstrates GPU resource allocation and management
 - Shows priority-based scheduling
-- Includes GPU-specific features like contiguous GPU allocation
 - Demonstrates gang scheduling for GPU workloads
 - Shows resource consolidation for GPU workloads
 
@@ -54,6 +61,3 @@ Each demo has its own README with detailed instructions. Please refer to:
 - [CPU Scheduling Demo Guide](demo/cpu-scheduling-example/README.md)
 - [GPU Scheduling Demo Guide](demo/gpu-scheduling-example/README.md)
 
-## License
-
-This repository is private and confidential. All rights reserved.
