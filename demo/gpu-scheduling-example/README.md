@@ -60,7 +60,7 @@
 
 ## Demo Flow
 
-### Step 1: Setup Initial State
+### Step 1: Setup the Initial Cluster State
 ```bash
 kubectl apply -f 1-queues.yaml
 kubectl apply -f 2-initial-state.yaml
