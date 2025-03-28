@@ -67,7 +67,7 @@ Monitor the pod status:
 kubectl get pods -A -w
 ```
 
-Expected Output:
+Expected Behaviour:
 ```
 Allocating 4 CPUs to training-job-1 on node node-1
 Allocating 2 CPUs to training-job-2 on node node-1
@@ -80,7 +80,7 @@ Allocating 5 CPUs to interactive-job on node node-3
 kubectl apply -f 3-new-workloads.yaml
 ```
 
-Expected Output:
+Expected Behaviour:
 ```
 New workload submitted: training-job-b (Project A, Priority 150)
 New workload submitted: training-job-a (Project C, Priority 150)
@@ -99,7 +99,7 @@ Initiating resource consolidation
 kubectl get pods -w
 ```
 
-Expected Output:
+Expected Behaviour:
 ```
 Starting allocation phase
 Training Job B (3 CPUs) scheduled on Node 3
