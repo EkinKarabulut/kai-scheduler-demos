@@ -6,9 +6,9 @@
 - [Initial Cluster State](#initial-cluster-state)
 - [Scheduling Actions after New Workload Submission](#scheduling-actions-after-new-workload-submission)
 - [Demo Flow](#demo-flow)
-    - [Step 1: Setup the Initial Cluster State](#step-1:-setup-the-initial-cluster-state)
-    - [Step 2: Submit New Workloads](#step-2:-submit-new-workloads)
-    - [Step 3: Monitor Scheduling](#step-2:-monitor-scheduling)
+    - [Step 1: Setup the Initial Cluster State](#step-1-setup-the-initial-cluster-state)
+    - [Step 2: Submit New Workloads](#step-2-submit-new-workloads)
+    - [Step 3: Monitor Scheduling](#step-2-monitor-scheduling)
 - [Troubleshooting](#troubleshooting)
 
 ## Prerequisites
