@@ -1,5 +1,16 @@
 # Scheduling GPU Workloads with KAI Scheduler
 
+## Table of Contents
+- [Prerequisites](#prerequisites)
+- [Queue Configuration](#queue-configuration)
+- [Initial Cluster State](#initial-cluster-state)
+- [Scheduling Actions after New Workload Submission](#scheduling-actions-after-new-workload-submission)
+- [Demo Flow](#demo-flow)
+    - [Step 1: Setup the Initial Cluster State](#step-1-setup-the-initial-cluster-state)
+    - [Step 2: Submit New Workloads](#step-2-submit-new-workloads)
+    - [Step 3: Monitor Scheduling](#step-2-monitor-scheduling)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 - Kubernetes cluster with KAI Scheduler installed (version 1.0 or later)
@@ -23,21 +34,29 @@
 
 ## Initial Cluster State
 
-### Node 1 (8 GPUs)
-- Training Job 1 (Project A): 4 GPUs
-- Training Job 2 (Project C): 2 GPUs
-- Available: 2 GPUs
+- Node 1: Training Job 1 (4 GPUs) + Training Job 2 (2 GPUs)
+- Node 2: Training Job 3 (6 GPUs) 
+- Node 3: Interactive Job (5 GPUs) 
+- Node 4: No Workloads Running
 
-### Node 2 (8 GPUs)
-- Training Job 3 (Project C): 6 GPUs
-- Available: 2 GPUs
+## Scheduling Actions after New Workload Submission
 
-### Node 3 (8 GPUs)
-- Interactive Job (Project D): 5 GPUs
-- Available: 3 GPUs
+1. **Allocation Phase**
+   - Training Job B (3 GPUs) is scheduled on Node 3
+   - Training Job A remains pending
 
-### Node 4 (8 GPUs)
-- Available: 8 GPUs
+2. **Consolidation Phase**
+   - Training Job 2 is relocated to Node 2
+   - Training Job A (4 GPUs) is scheduled on Node 1
+
+3. **After Consolidation**
+   - Training Job 2 will be moved from Node 1 to Node 2
+   - Training Job A will be scheduled on Node 1
+   - Final state:
+     - Node 1: Training Job 1 (4 GPUs) + Training Job A (4 GPUs)
+     - Node 2: Training Job 3 (6 GPUs) + Training Job 2 (2 GPUs)
+     - Node 3: Interactive Job (5 GPUs) + Training Job B (3 GPUs)
+     - Node 4: Available (8 GPUs)
 
 ## Demo Flow
 
@@ -96,24 +115,6 @@ Creating 4 contiguous GPUs on node-1
 Scheduling training-job-a (4 GPUs) on node-1
 ```
 
-## Scheduling Actions after New Workload Submission
-
-1. **Allocation Phase**
-   - Training Job B (3 GPUs) is scheduled on Node 3
-   - Training Job A remains pending
-
-2. **Consolidation Phase**
-   - Training Job 2 is relocated to Node 2
-   - Training Job A (4 GPUs) is scheduled on Node 1
-
-3. **After Consolidation**
-   - Training Job 2 will be moved from Node 1 to Node 2
-   - Training Job A will be scheduled on Node 1
-   - Final state:
-     - Node 1: Training Job 1 (4 GPUs) + Training Job A (4 GPUs)
-     - Node 2: Training Job 3 (6 GPUs) + Training Job 2 (2 GPUs)
-     - Node 3: Interactive Job (5 GPUs) + Training Job B (3 GPUs)
-     - Node 4: Available (8 GPUs)
 
 ## Cleanup
 ```bash
