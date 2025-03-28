@@ -8,7 +8,7 @@
 - [Demo Flow](#demo-flow)
     - [Step 1: Setup the Initial Cluster State](#step-1-setup-the-initial-cluster-state)
     - [Step 2: Submit New Workloads](#step-2-submit-new-workloads)
-    - [Step 3: Monitor Scheduling](#step-2-monitor-scheduling)
+    - [Step 3: Monitor Scheduling](#step-3-monitor-scheduling)
 - [Troubleshooting](#troubleshooting)
 
 ## Prerequisites
