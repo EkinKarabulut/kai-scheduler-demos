@@ -31,18 +31,13 @@ This repository contains demonstration examples for the [KAI Scheduler](https://
 
 ## Demo Contents
 
-### CPU Scheduling Example
-- Demonstrates CPU resource allocation and management
+### Scheduling Example for CPU & GPU each
+- Demonstrates CPU/GPU resource allocation and management
 - Shows priority-based scheduling
 - Includes a distributed training workload
 - Demonstrates gang scheduling capabilities
-- Shows resource consolidation for CPU workloads
+- Shows resource consolidation for CPU/GPU workloads
 
-### GPU Scheduling Example
-- Demonstrates GPU resource allocation and management
-- Shows priority-based scheduling
-- Demonstrates gang scheduling for GPU workloads
-- Shows resource consolidation for GPU workloads
 
 ## Prerequisites
 
