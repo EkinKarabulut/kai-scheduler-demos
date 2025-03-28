@@ -3,31 +3,19 @@
 This repository contains demonstration examples for the [KAI Scheduler](https://github.com/NVIDIA/KAI-Scheduler), showcasing its capabilities in both CPU and GPU resource management. These demos illustrate how the scheduler handles complex scheduling scenarios, including priority-based scheduling, workload consolidation, and gang scheduling.
 
 ## Table of Contents
-- [Repository Structure](#repository-structure)
+- [Getting Started](#getting-started)
 - [Demo Contents](#demo-contents)
   - [CPU Scheduling Example](#cpu-scheduling-example)
   - [GPU Scheduling Example](#gpu-scheduling-example)
 - [Prerequisites](#prerequisites)
-- [Getting Started](#getting-started)
 - [Documentation](#documentation)
 
-## Repository Structure
+## Getting Started
 
-```
-.
-├── demo/
-│   ├── cpu-scheduling-example/     # CPU resource management demo
-│   │   ├── README.md              # Detailed guide for CPU demo
-│   │   ├── 1-queues.yaml         # Queue hierarchy configuration
-│   │   ├── 2-initial-state.yaml  # Initial cluster state
-│   │   └── 3-new-workloads.yaml  # New workloads to demonstrate scheduling
-│   │
-│   └── gpu-scheduling-example/     # GPU resource management demo
-│       ├── README.md              # Detailed guide for GPU demo
-│       ├── 1-queues.yaml         # Queue hierarchy configuration
-│       ├── 2-initial-state.yaml  # Initial cluster state
-│       └── 3-new-workloads.yaml  # New workloads to demonstrate scheduling
-```
+Each demo has its own README with detailed instructions. Please refer to:
+- [CPU Scheduling Demo Guide](demo/cpu-scheduling-example/README.md)
+- [GPU Scheduling Demo Guide](demo/gpu-scheduling-example/README.md)
+
 
 ## Demo Contents
 
@@ -51,11 +39,6 @@ To run these demos, you need:
    - NVIDIA device plugin installed and configured
    - Training operator installed
 
-## Getting Started
-
-Each demo has its own README with detailed instructions. Please refer to:
-- [CPU Scheduling Demo Guide](demo/cpu-scheduling-example/README.md)
-- [GPU Scheduling Demo Guide](demo/gpu-scheduling-example/README.md)
 
 ## Documentation 
 For more detailed information about features and how the KAI scheduler works, please refer to the [documentation](https://github.com/NVIDIA/KAI-Scheduler/docs). We welcome any questions in Github issues! 
