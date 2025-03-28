@@ -21,22 +21,27 @@
   - 8 CPU quota (25% of cluster)
 
 ## Initial Cluster State
+   - Node 1: Training Job 1 (4 CPUs) + Training Job 2 (2 CPUs)
+   - Node 2: Training Job 3 (6 CPUs) 
+   - Node 3: Interactive Job (5 CPUs) 
+   - Node 4: No Workload Running
 
-### Node 1 (8 CPUs)
-- Training Job 1 (Project A): 4 CPUs
-- Training Job 2 (Project C): 2 CPUs
-- Available: 2 CPUs
+## Scheduling Actions after New Workload Submission
 
-### Node 2 (8 CPUs)
-- Training Job 3 (Project C): 6 CPUs
-- Available: 2 CPUs
+1. **Allocation Phase**
+   - Training Job B (3 CPUs) is scheduled on Node 3
+   - Training Job A remains pending
 
-### Node 3 (8 CPUs)
-- Interactive Job (Project D): 5 CPUs
-- Available: 3 CPUs
+2. **Consolidation Phase**
+   - Training Job 2 is relocated to Node 2
+   - Training Job A (4 CPUs) is scheduled on Node 1
 
-### Node 4 (8 CPUs)
-- Available: 8 CPUs
+3. **Final Cluster State**
+   - Node 1: Training Job 1 (4 CPUs) + Training Job A (4 CPUs)
+   - Node 2: Training Job 3 (6 CPUs) + Training Job 2 (2 CPUs)
+   - Node 3: Interactive Job (5 CPUs) + Training Job B (3 CPUs)
+   - Node 4: Available (8 CPUs)
+
 
 ## Demo Flow
 
@@ -99,22 +104,6 @@ Gang scheduling check for distributed-training:
 - Current placement: node-2 (6 CPUs total)
 - No preemption needed as resources are sufficient
 ```
-
-## Scheduling Actions after New Workload Submission
-
-1. **Allocation Phase**
-   - Training Job B (3 CPUs) is scheduled on Node 3
-   - Training Job A remains pending
-
-2. **Consolidation Phase**
-   - Training Job 2 is relocated to Node 2
-   - Training Job A (4 CPUs) is scheduled on Node 1
-
-3. **Final State**
-   - Node 1: Training Job 1 (4 CPUs) + Training Job A (4 CPUs)
-   - Node 2: Training Job 3 (6 CPUs) + Training Job 2 (2 CPUs)
-   - Node 3: Interactive Job (5 CPUs) + Training Job B (3 CPUs)
-   - Node 4: Available (8 CPUs)
 
 ## Cleanup
 ```bash
