@@ -47,18 +47,7 @@ spec:
         spec:
           schedulerName: kai-scheduler
           containers:
-            - args:
-                - --backend
-                - gloo
-                - --epochs
-                - "900"
-                - --batch-size
-                - "64"
-                - --learning-rate
-                - "0.01"
-                - --max_steps 
-                - "1000000"
-              image: gcr.io/kubeflow-ci/pytorch-dist-mnist-test:v1.0
+              image: kubeflow/tf-mnist-with-summaries:latest
               name: pytorch
               resources:
                 requests:
@@ -72,18 +61,7 @@ spec:
         spec:
           schedulerName: kai-scheduler
           containers:
-            - args:
-                - --backend
-                - gloo
-                - --epochs
-                - "900"
-                - --batch-size
-                - "64"
-                - --learning-rate
-                - "0.01"
-                - --max_steps 
-                - "1000000"
-              image: gcr.io/kubeflow-ci/pytorch-dist-mnist-test:v1.0
+              image: kubeflow/tf-mnist-with-summaries:latest
               name: pytorch
               resources:
                 requests:
