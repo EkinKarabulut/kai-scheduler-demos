@@ -56,7 +56,9 @@ spec:
                 - "64"
                 - --learning-rate
                 - "0.01"
-              image: pytorch/pytorch:2.1.0-cuda11.8-cudnn8-runtime
+                - --max_steps 
+                - "1000000"
+              image: gcr.io/kubeflow-ci/pytorch-dist-mnist-test:v1.0
               name: pytorch
               command: ["python"]
               resources:
@@ -80,7 +82,9 @@ spec:
                 - "64"
                 - --learning-rate
                 - "0.01"
-              image: pytorch/pytorch:2.1.0-cuda11.8-cudnn8-runtime
+                - --max_steps 
+                - "1000000"
+              image: gcr.io/kubeflow-ci/pytorch-dist-mnist-test:v1.0
               name: pytorch
               command: ["python"]
               resources:
