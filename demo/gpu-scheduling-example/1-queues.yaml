@@ -8,12 +8,15 @@ spec:
   resources:
     gpu:
       quota: 16
+      limit: -1
       overQuotaWeight: 2.0
     cpu:
       quota: 16
+      limit: -1
       overQuotaWeight: 2.0
     memory:
       quota: 64
+      limit: -1
       overQuotaWeight: 2.0
 ---
 apiVersion: scheduling.run.ai/v2
@@ -26,12 +29,15 @@ spec:
   resources:
     gpu:
       quota: 16
+      limit: -1
       overQuotaWeight: 1.0
     cpu:
       quota: 16
+      limit: -1
       overQuotaWeight: 1.0
     memory:
       quota: 64
+      limit: -1
       overQuotaWeight: 1.0
 ---
 apiVersion: scheduling.run.ai/v2
@@ -45,12 +51,15 @@ spec:
   resources:
     gpu:
       quota: 8
+      limit: -1
       overQuotaWeight: 2.0
     cpu:
       quota: 8
+      limit: -1
       overQuotaWeight: 2.0
     memory:
       quota: 32
+      limit: -1
       overQuotaWeight: 2.0
 ---
 apiVersion: scheduling.run.ai/v2
@@ -64,12 +73,15 @@ spec:
   resources:
     gpu:
       quota: 8
+      limit: -1
       overQuotaWeight: 1.0
     cpu:
       quota: 8
+      limit: -1
       overQuotaWeight: 1.0
     memory:
       quota: 32
+      limit: -1
       overQuotaWeight: 1.0
 ---
 apiVersion: scheduling.run.ai/v2
@@ -83,12 +95,15 @@ spec:
   resources:
     gpu:
       quota: 8
+      limit: -1
       overQuotaWeight: 1.5
     cpu:
       quota: 8
+      limit: -1
       overQuotaWeight: 1.5
     memory:
       quota: 32
+      limit: -1
       overQuotaWeight: 1.5
 ---
 apiVersion: scheduling.run.ai/v2
@@ -102,10 +117,13 @@ spec:
   resources:
     gpu:
       quota: 8
+      limit: -1
       overQuotaWeight: 1.0
     cpu:
       quota: 8
+      limit: -1
       overQuotaWeight: 1.0
     memory:
       quota: 32
+      limit: -1
       overQuotaWeight: 1.0 
