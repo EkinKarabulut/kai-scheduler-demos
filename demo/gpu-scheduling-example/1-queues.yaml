@@ -7,11 +7,11 @@ spec:
   priority: 200
   resources:
     gpu:
-      quota: 16
+      quota: 8
       limit: -1
       overQuotaWeight: 2.0
     cpu:
-      quota: 16
+      quota: 8
       limit: -1
       overQuotaWeight: 2.0
     memory:
@@ -28,15 +28,15 @@ spec:
   priority: 100
   resources:
     gpu:
-      quota: 16
+      quota: 8
       limit: -1
       overQuotaWeight: 1.0
     cpu:
-      quota: 16
+      quota: 8
       limit: -1
       overQuotaWeight: 1.0
     memory:
-      quota: 64
+      quota: 8
       limit: -1
       overQuotaWeight: 1.0
 ---
@@ -50,11 +50,11 @@ spec:
   priority: 150
   resources:
     gpu:
-      quota: 8
+      quota: 4
       limit: -1
       overQuotaWeight: 2.0
     cpu:
-      quota: 8
+      quota: 4
       limit: -1
       overQuotaWeight: 2.0
     memory:
@@ -72,11 +72,11 @@ spec:
   priority: 100
   resources:
     gpu:
-      quota: 8
+      quota: 4
       limit: -1
       overQuotaWeight: 1.0
     cpu:
-      quota: 8
+      quota: 4
       limit: -1
       overQuotaWeight: 1.0
     memory:
@@ -94,11 +94,11 @@ spec:
   priority: 150
   resources:
     gpu:
-      quota: 8
+      quota: 4
       limit: -1
       overQuotaWeight: 1.5
     cpu:
-      quota: 8
+      quota: 4
       limit: -1
       overQuotaWeight: 1.5
     memory:
@@ -116,11 +116,11 @@ spec:
   priority: 100
   resources:
     gpu:
-      quota: 8
+      quota: 4
       limit: -1
       overQuotaWeight: 1.0
     cpu:
-      quota: 8
+      quota: 4
       limit: -1
       overQuotaWeight: 1.0
     memory:
