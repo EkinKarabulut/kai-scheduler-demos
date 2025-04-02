@@ -37,7 +37,7 @@ kind: PyTorchJob
 metadata:
   name: pytorch-example
   labels:
-    runai/queue: test
+    runai/queue: project-b
 spec:
   pytorchReplicaSpecs:
     Master:
