@@ -14,7 +14,7 @@
 ## Prerequisites
 
 - Kubernetes cluster with KAI Scheduler installed (version 1.0 or later)
-- 4 nodes with 8 GPUs each (32 total GPUs)
+- 4 nodes with 4 GPUs each (16 total GPUs)
 - NVIDIA device plugin installed and configured
 - Kubeflow training operator installed (required for distributed training)
 
@@ -22,21 +22,21 @@
 
 ### Department 1 (Higher Priority - 200)
 - Project A (Priority: 150)
-  - 8 GPU quota (25% of cluster)
+  - 4 GPU quota (25% of cluster)
 - Project B (Priority: 100)
-  - 8 GPU quota (25% of cluster)
+  - 4 GPU quota (25% of cluster)
 
 ### Department 2 (Lower Priority - 100)
 - Project C (Priority: 150)
-  - 8 GPU quota (25% of cluster)
+  - 4 GPU quota (25% of cluster)
 - Project D (Priority: 100)
-  - 8 GPU quota (25% of cluster)
+  - 4 GPU quota (25% of cluster)
 
 ## Initial Cluster State
 
-- Node 1: Training Job 1 (4 GPUs) + Training Job 2 (2 GPUs)
-- Node 2: Training Job 3 (6 GPUs) 
-- Node 3: Interactive Job (5 GPUs) 
+- Node 1: Training Job 1 (2 GPUs) + Training Job 2 (1 GPUs)
+- Node 2: Training Job 3 (3 GPUs) 
+- Node 3: Interactive Job (4 GPUs) 
 - Node 4: No Workloads Running
 
 ## Scheduling Actions after New Workload Submission
