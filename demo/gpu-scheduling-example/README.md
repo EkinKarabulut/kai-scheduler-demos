@@ -34,11 +34,23 @@
 
 ## Initial Cluster State
 
-- Node 1: Training Job 1 (2 GPUs) + Training Job 2 (1 GPUs)
-- Node 2: Training Job 3 (3 GPUs) 
-- Node 3: Interactive Job (4 GPUs) 
-- Node 4: No Workloads Running
+- Training Job 1 (2 GPUs) 
+- Training Job 2 (1 GPUs)
+- Distributed Training Job 3 (3 GPUs) 
+- Interactive Job (4 GPUs)
 
+### Step 1: Setup the Initial Cluster State
+```bash
+kubectl apply -f 1-queues.yaml
+kubectl apply -f 2-initial-state.yaml
+```
+
+### Step 2: Submit New Workloads
+```bash
+kubectl apply -f 3-new-workloads.yaml
+```
+
+<!--
 ## Scheduling Actions after New Workload Submission
 
 1. **Allocation Phase**
@@ -114,7 +126,7 @@ Moving training-job-2 (2 GPUs) from node-1 to node-2
 Creating 4 contiguous GPUs on node-1
 Scheduling training-job-a (4 GPUs) on node-1
 ```
-
+-->
 
 ## Cleanup
 ```bash
