@@ -29,7 +29,7 @@ Each demo has its own README with detailed instructions. Please refer to:
 
 To run these demos, you need:
 1. A Kubernetes cluster with KAI Scheduler installed (version 1.0 or later)
-2. 4 nodes with 8 GPUs each (32 total GPUs)
+2. 4 nodes with 4 GPUs each (16 total GPUs)
 3. NVIDIA device plugin installed and configured
 4. Kubeflow Training operator installed
 
